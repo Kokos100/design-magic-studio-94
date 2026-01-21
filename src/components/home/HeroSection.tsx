@@ -2,16 +2,25 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import heroVideo from "@/assets/hero-video.mp4";
 
 export function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-mint-light/50 via-background to-violet-light/30" />
-      
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-gradient-brand opacity-10 blur-[120px] rounded-full" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary opacity-20 blur-[100px] rounded-full" />
+      {/* Background Video */}
+      <div className="absolute inset-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+      </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-4xl">
