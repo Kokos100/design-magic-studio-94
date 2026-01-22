@@ -6,9 +6,12 @@ import heroVideo from "@/assets/hero-video.mp4";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background Video */}
-      <div className="absolute inset-0">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
+      {/* Dark background for left side */}
+      <div className="absolute inset-0 bg-background" />
+      
+      {/* Video on right half only */}
+      <div className="absolute top-0 right-0 w-1/2 h-full hidden md:block">
         <video
           autoPlay
           loop
@@ -18,8 +21,10 @@ export function HeroSection() {
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+        {/* Gradient overlay for smooth transition */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
+        {/* Darken overlay */}
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
