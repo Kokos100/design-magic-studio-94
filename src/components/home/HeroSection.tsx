@@ -6,7 +6,7 @@ import heroVideo from "@/assets/hero-video.mp4";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#0a0a0a]">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-b from-[#0a0a0a] via-[#0a0a0a] to-background">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
@@ -110,6 +110,9 @@ export function HeroSection() {
           ))}
         </motion.div>
       </div>
+      
+      {/* Smooth transition gradient at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 }
