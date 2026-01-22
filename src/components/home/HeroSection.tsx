@@ -6,7 +6,7 @@ import heroVideo from "@/assets/hero-video.mp4";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-b from-[#0a0a0a] via-[#0a0a0a] to-background">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
@@ -25,7 +25,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-6"
             >
               Создаём{" "}
               <span className="bg-gradient-brand bg-clip-text text-transparent">
@@ -38,7 +38,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-white/70 mb-10 max-w-lg"
+              className="text-lg text-muted-foreground mb-10 max-w-lg"
             >
               Веб-разработка, мобильные приложения и UI/UX дизайн. 
               Превращаем идеи в работающие решения, которые приносят результат.
@@ -69,21 +69,21 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="hidden lg:block relative"
           >
-            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-border shadow-2xl">
               <video
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover grayscale"
               >
                 <source src={heroVideo} type="video/mp4" />
               </video>
               {/* Subtle overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
             </div>
             {/* Decorative glow */}
-            <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-full -z-10 opacity-50" />
+            <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-full -z-10 opacity-30" />
           </motion.div>
         </div>
 
@@ -92,7 +92,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-white/10 max-w-2xl"
+          className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-border max-w-2xl"
         >
           {[
             { value: "150+", label: "Проектов" },
@@ -103,16 +103,13 @@ export function HeroSection() {
               <div className="text-3xl md:text-4xl font-bold bg-gradient-brand bg-clip-text text-transparent">
                 {stat.value}
               </div>
-              <div className="text-sm text-white/60 mt-1">
+              <div className="text-sm text-muted-foreground mt-1">
                 {stat.label}
               </div>
             </div>
           ))}
         </motion.div>
       </div>
-      
-      {/* Smooth transition gradient at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 }
