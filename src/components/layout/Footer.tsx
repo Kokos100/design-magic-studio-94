@@ -30,14 +30,14 @@ export function Footer() {
           {/* Logo & Description */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
-              <img src={logo} alt="Tomorrow IT" className="h-10 w-auto" />
+              <img src={logo} alt="Elo" className="h-10 w-auto" />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Создаём цифровые продукты, которые работают на бизнес. 
               Веб-разработка, мобильные приложения и дизайн.
             </p>
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Tomorrow IT
+              © {new Date().getFullYear()} Elo
             </p>
           </div>
 
@@ -91,10 +91,10 @@ export function Footer() {
               ))}
             </ul>
             <a
-              href="mailto:hello@tomorrow-it.com"
+              href="mailto:hello@elo.agency"
               className="text-sm font-medium text-primary hover:underline"
             >
-              hello@tomorrow-it.com
+              hello@elo.agency
             </a>
           </div>
         </div>

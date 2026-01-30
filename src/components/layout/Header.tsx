@@ -23,7 +23,7 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <img src={logo} alt="Tomorrow IT" className="h-10 w-auto" />
+            <img src={logo} alt="Elo" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
