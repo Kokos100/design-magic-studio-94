@@ -17,44 +17,45 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 10%;
 
-    --primary: 263 84% 58%;
+    --primary: 255 80% 65%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 165 84% 63%;
+    --secondary: 175 70% 50%;
     --secondary-foreground: 240 10% 10%;
 
     --muted: 240 5% 96%;
     --muted-foreground: 240 5% 45%;
 
-    --accent: 165 84% 63%;
-    --accent-foreground: 240 10% 10%;
+    --accent: 220 85% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 240 6% 90%;
     --input: 240 6% 90%;
-    --ring: 263 84% 58%;
+    --ring: 255 80% 65%;
 
     --radius: 0.75rem;
 
-    /* Tomorrow IT Brand Colors */
-    --mint: 165 84% 63%;
-    --violet: 263 84% 58%;
-    --violet-deep: 263 90% 45%;
-    --mint-light: 165 70% 90%;
-    --violet-light: 263 70% 95%;
+    /* ELO Brand Colors - Cyan to Blue to Violet */
+    --cyan: 175 70% 50%;
+    --blue: 220 85% 60%;
+    --violet: 255 80% 65%;
+    --violet-deep: 255 85% 55%;
+    --cyan-light: 175 60% 92%;
+    --violet-light: 255 60% 95%;
     
     /* Gradient */
-    --gradient-brand: linear-gradient(135deg, hsl(165 84% 63%) 0%, hsl(263 84% 58%) 100%);
-    --gradient-brand-hover: linear-gradient(135deg, hsl(165 84% 55%) 0%, hsl(263 84% 50%) 100%);
-    --gradient-text: linear-gradient(135deg, hsl(165 84% 50%) 0%, hsl(263 84% 58%) 100%);
+    --gradient-brand: linear-gradient(135deg, hsl(175 70% 50%) 0%, hsl(220 85% 60%) 50%, hsl(255 80% 65%) 100%);
+    --gradient-brand-hover: linear-gradient(135deg, hsl(175 70% 45%) 0%, hsl(220 85% 55%) 50%, hsl(255 80% 58%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(175 70% 45%) 0%, hsl(255 80% 65%) 100%);
     
     /* Shadows */
     --shadow-sm: 0 2px 8px -2px hsl(240 10% 10% / 0.08);
     --shadow-md: 0 8px 24px -8px hsl(240 10% 10% / 0.12);
     --shadow-lg: 0 16px 48px -12px hsl(240 10% 10% / 0.18);
-    --shadow-brand: 0 8px 32px -8px hsl(263 84% 58% / 0.35);
+    --shadow-brand: 0 8px 32px -8px hsl(255 80% 65% / 0.35);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5% 26%;
@@ -76,30 +77,31 @@ All colors MUST be HSL.
     --popover: 240 10% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 263 84% 65%;
+    --primary: 255 80% 70%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 165 70% 55%;
+    --secondary: 175 65% 50%;
     --secondary-foreground: 240 10% 10%;
 
     --muted: 240 8% 15%;
     --muted-foreground: 240 5% 60%;
 
-    --accent: 165 70% 55%;
-    --accent-foreground: 240 10% 10%;
+    --accent: 220 80% 65%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 240 8% 18%;
     --input: 240 8% 18%;
-    --ring: 263 84% 65%;
+    --ring: 255 80% 70%;
 
-    --mint: 165 70% 55%;
-    --violet: 263 84% 65%;
-    --violet-deep: 263 90% 55%;
-    --mint-light: 165 50% 20%;
-    --violet-light: 263 50% 15%;
+    --cyan: 175 65% 50%;
+    --blue: 220 80% 65%;
+    --violet: 255 80% 70%;
+    --violet-deep: 255 85% 60%;
+    --cyan-light: 175 40% 20%;
+    --violet-light: 255 40% 18%;
 
     --sidebar-background: 240 10% 8%;
     --sidebar-foreground: 0 0% 95%;
