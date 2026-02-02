@@ -1,0 +1,51 @@
+name: Deploy static site (dist -> server)
+
+on:
+  push:
+    branches: ["main", "ci"]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-static
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # --- BUILD (пример; замените под ваш проект) ---
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+
+      - name: Install rsync
+        run: sudo apt-get update && sudo apt-get install -y rsync
+
+      - name: Start ssh-agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.CI_GH_SERVER_SSH_TARGET_PRIVATE_KEY }}
+
+      - name: Add host key (known_hosts)
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H -p "${{ secrets.CI_GH_SERVER_SSH_TARGET_PORT || '22' }}" \
+            "${{ secrets.CI_GH_SERVER_SSH_TARGET_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Rsync dist/ to server
+        env:
+          TARGET_HOST: ${{ secrets.CI_GH_SERVER_SSH_TARGET_HOST }}
+          TARGET_USER: ${{ secrets.CI_GH_SERVER_SSH_TARGET_USER }}
+          TARGET_PORT: ${{ secrets.CI_GH_SERVER_SSH_TARGET_PORT }}
+          DEST: ${{ secrets.CI_GH_SERVER_DEST_PATH }} # например: /var/www/site/
+        run: |
+          TARGET_PORT="${TARGET_PORT:-22}"
+          rsync -az --delete --checksum \
+            -e "ssh -p ${TARGET_PORT}" \
+            ./dist/ "${TARGET_USER}@${TARGET_HOST}:${DEST}"
