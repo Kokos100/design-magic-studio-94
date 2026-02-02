@@ -17,11 +17,11 @@ const projects = [
   },
   {
     id: 2,
-    title: "E-commerce маркетплейс",
+    title: "LuxMarket",
     category: "Мобильные приложения",
-    description: "Мобильное приложение для маркетплейса с интеграцией платежей",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
-    tags: ["React Native", "Stripe", "Firebase"],
+    description: "Маркетплейс люксовых вещей с верификацией оригинальности и чатом с продавцами",
+    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&h=600&fit=crop",
+    tags: ["React Native", "Node.js", "Stripe", "AI-верификация"],
   },
   {
     id: 3,
