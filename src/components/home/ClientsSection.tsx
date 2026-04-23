@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import technopolisLogo from "@/assets/client-technopolis-moscow.png";
+import nizhnyNovgorodGovLogo from "@/assets/client-nizhny-novgorod-gov.png";
+import pharmaSoftLogo from "@/assets/client-pharma-soft.png";
 
 const clients = [
-  "LUXE",
-  "NOVA",
-  "AURUM",
-  "ATLAS",
-  "MONO",
-  "PRIME",
-  "VELVET",
-  "ORBIT",
+  { name: "Технополис Москва", logo: technopolisLogo },
+  { name: "Правительство Нижегородской области", logo: nizhnyNovgorodGovLogo },
+  { name: "Фарма Софт", logo: pharmaSoftLogo },
 ];
 
 export function ClientsSection() {
@@ -30,22 +29,29 @@ export function ClientsSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
-          {clients.map((client, index) => (
-            <motion.div
-              key={client}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: index * 0.05 }}
-              className="group flex h-28 lg:h-32 items-center justify-center rounded-2xl border border-border bg-card/70 px-5 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-medium"
-            >
-              <span className="text-xl lg:text-2xl font-bold tracking-[0.18em] text-muted-foreground transition-colors duration-300 group-hover:text-primary">
-                {client}
-              </span>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45 }}
+        >
+          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+            <CarouselContent>
+              {clients.map((client) => (
+                <CarouselItem key={client.name} className="basis-full md:basis-1/2 lg:basis-1/3">
+                  <div className="group flex h-28 lg:h-32 items-center justify-center rounded-2xl border border-border bg-card/70 px-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-medium">
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="max-h-16 lg:max-h-20 max-w-full object-contain transition duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </motion.div>
       </div>
     </section>
   );
