@@ -30,7 +30,7 @@ export function Footer() {
           {/* Logo & Description */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
-              <img src={logo} alt="Elo" className="h-10 w-auto" />
+              <img src={logo} alt="Elo" className="h-14 w-auto" />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Создаём цифровые продукты, которые работают на бизнес. 
