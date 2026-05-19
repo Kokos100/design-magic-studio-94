@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Eye, Heart, Share2, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 
 const articles = [
   {
