@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ProjectsPreview } from "@/components/home/ProjectsPreview";
 import { AboutSection } from "@/components/home/AboutSection";
@@ -10,6 +11,11 @@ import { CTASection } from "@/components/home/CTASection";
 const Index = () => {
   return (
     <Layout>
+      <SEO
+        title="eloit — web проекты любой сложности"
+        description="eloit — digital-агентство полного цикла: веб-разработка, мобильные приложения и UI/UX дизайн для роста бизнеса."
+        path="/"
+      />
       <HeroSection />
       <ProjectsPreview />
       <ClientsSection />
