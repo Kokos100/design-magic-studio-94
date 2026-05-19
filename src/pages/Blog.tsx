@@ -70,6 +70,11 @@ const articles = [
 const Blog = () => {
   return (
     <Layout>
+      <SEO
+        title="Блог eloit — статьи о разработке и дизайне"
+        description="Разбираем кейсы, тренды и инструменты веб-разработки, мобильных приложений, архитектуры и UX-дизайна."
+        path="/blog"
+      />
       {/* Header */}
       <section className="pt-24 pb-12 lg:pt-32 lg:pb-16">
         <div className="container mx-auto px-6 lg:px-12">
