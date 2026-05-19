@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 
 const categories = ["Все", "Веб-разработка", "Мобильные приложения", "UI/UX Дизайн"];
 
@@ -66,6 +67,11 @@ const Projects = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Проекты — портфолио eloit"
+        description="Избранные кейсы eloit: веб-приложения, мобильные продукты и UI/UX дизайн для бизнеса разных отраслей."
+        path="/projects"
+      />
       {/* Header */}
       <section className="pt-24 pb-12 lg:pt-32 lg:pb-16">
         <div className="container mx-auto px-6 lg:px-12">

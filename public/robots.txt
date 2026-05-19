@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://design-magic-studio-94.lovable.app/sitemap.xml

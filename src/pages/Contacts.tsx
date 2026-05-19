@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -29,6 +30,18 @@ const Contacts = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Контакты eloit — обсудить проект"
+        description="Свяжитесь с eloit, чтобы обсудить веб-разработку, мобильное приложение или дизайн. Ответим в течение одного рабочего дня."
+        path="/contacts"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "eloit",
+          email: "hello@elo.agency",
+          url: "https://design-magic-studio-94.lovable.app/contacts",
+        }}
+      />
       {/* Header */}
       <section className="pt-24 pb-12 lg:pt-32 lg:pb-16">
         <div className="container mx-auto px-6 lg:px-12">

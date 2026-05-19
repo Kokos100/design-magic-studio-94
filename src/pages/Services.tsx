@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Code, Smartphone, Palette, Settings, Zap, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 
 const services = [
@@ -82,6 +83,18 @@ const services = [
 const Services = () => {
   return (
     <Layout>
+      <SEO
+        title="Услуги eloit — веб, мобильные приложения, дизайн"
+        description="Веб-разработка, мобильные приложения, UI/UX дизайн и интеграции. Полный цикл создания цифровых продуктов под ключ."
+        path="/services"
+        jsonLd={services.map((s) => ({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: s.title,
+          description: s.description,
+          provider: { "@type": "Organization", name: "eloit" },
+        }))}
+      />
       {/* Header */}
       <section className="pt-24 pb-12 lg:pt-32 lg:pb-16">
         <div className="container mx-auto px-6 lg:px-12">

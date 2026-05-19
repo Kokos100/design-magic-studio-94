@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight, Calendar, Users, Clock } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 
 const projectsData: Record<string, {
@@ -86,6 +87,11 @@ const ProjectDetail = () => {
 
   return (
     <Layout>
+      <SEO
+        title={`${project.title} — кейс eloit`}
+        description={project.description}
+        path={`/projects/${id}`}
+      />
       {/* Header */}
       <section className="pt-24 pb-12 lg:pt-32 lg:pb-16">
         <div className="container mx-auto px-6 lg:px-12">
