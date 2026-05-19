@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, Eye, Heart, Share2, Calendar, User } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 
 const articlesData: Record<string, {
@@ -480,6 +481,21 @@ const BlogPost = () => {
 
   return (
     <Layout>
+      <SEO
+        title={`${article.title} — Блог eloit`}
+        description={article.excerpt}
+        path={`/blog/${id}`}
+        type="article"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: article.title,
+          description: article.excerpt,
+          image: article.image,
+          datePublished: article.date,
+          author: { "@type": "Person", name: article.author },
+        }}
+      />
       {/* Header */}
       <section className="pt-24 pb-8 lg:pt-32 lg:pb-12">
         <div className="container mx-auto px-6 lg:px-12">
